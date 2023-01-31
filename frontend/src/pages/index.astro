@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import MenuItem from '../components/MenuItem.astro';
 // import Card from '../components/Card.astro';
 import { getAllPosts } from '../sanity/api.js';
 import { urlForImage } from '../sanity/urlForImage';
@@ -8,6 +9,12 @@ const posts = await getAllPosts();
 
 <Layout title="Welcome to Astro.">
   <main>
+    <nav class="bg-gray-800 p-3 flex justify-between items-center">
+      <a href="#" class="text-white font-bold">My Blog</a>
+      <div class="flex">
+        <MenuItem title="Home" href="#"></MenuItem>
+      </div>
+    </nav>
     <h1>Welcome to <span class="text-gradient">my posts</span></h1>
     <ul>
       {
